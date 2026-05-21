@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f9; padding: 50px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+        .risk-tag { padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .High { background: #ffcccc; color: #cc0000; }
+        .Critical { background: #000; color: #fff; }
+        .hash { font-family: monospace; background: #eee; padding: 10px; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Analysis Complete</h2>
+        <p>Risk Level: <span class="risk-tag {{ risk }}">{{ risk }}</span></p>
+        <h4>Findings:</h4>
+        <p>{{ findings }}</p>
+        <h4>Blockchain Hash:</h4>
+        <div class="hash">{{ hash }}</div>
+        <br>
+        <a href="/analyze">Run another</a> | <a href="/dashboard">Dashboard</a>
+    </div>
+</body>
+</html>

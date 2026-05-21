@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MR NASSER | Dashboard</title>
+    <style>
+        body { margin: 0; display: flex; background: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        
+        /* Sidebar Navigation */
+        nav { 
+            width: 260px; height: 100vh; background: #1e293b; 
+            border-right: 1px solid #334155; padding: 30px; box-sizing: border-box;
+        }
+        .nav-logo { font-weight: 900; color: #38bdf8; font-size: 1.5rem; margin-bottom: 50px; }
+        nav a { 
+            display: block; color: #94a3b8; text-decoration: none; 
+            padding: 12px 15px; margin-bottom: 10px; border-radius: 10px; transition: 0.3s;
+        }
+        nav a:hover, nav a.active { background: #334155; color: white; }
+
+        /* Main Content Area */
+        main { flex: 1; padding: 50px; }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .card { 
+            background: #1e293b; padding: 30px; border-radius: 20px; 
+            border: 1px solid #334155; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card h3 { color: #94a3b8; font-size: 0.9rem; margin: 0; text-transform: uppercase; }
+        .card .value { font-size: 2.5rem; font-weight: 800; margin: 15px 0; color: #38bdf8; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">MR. NASSER</div>
+        <a href="/dashboard" class="active">Overview</a>
+        <a href="/analyze">Security Scan</a>
+        <a href="/history">Ledger History</a>
+        <div style="margin-top: 50px;">
+            <a href="/logout" style="color: #ef4444;">Disconnect</a>
+        </div>
+    </nav>
+    <main>
+        <div class="header-bar">
+            <h1>Command Center</h1>
+            <div style="color: #94a3b8;">Welcome back, Administrator</div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Total Scans</h3>
+                <div class="value">{{ total }}</div>
+                <div style="color: #22c55e;">+ System Online</div>
+            </div>
+            <div class="card">
+                <h3>Network Risk</h3>
+                <div class="value">LOW</div>
+                <div style="color: #94a3b8;">All protocols active</div>
+            </div>
+            <div class="card">
+                <h3>Ledger Status</h3>
+                <div class="value">SYNC</div>
+                <div style="color: #38bdf8;">Blockchain Encrypted</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

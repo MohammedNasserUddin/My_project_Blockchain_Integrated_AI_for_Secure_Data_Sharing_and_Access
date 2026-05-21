@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Analysis History (Ledger)</h1>
+    <a href="/dashboard">Back to Dashboard</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Risk Level</th>
+                <th>Hash</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.id }}</td>
+                <td>{{ record.input_type }}</td>
+                <td>{{ record.risk_level }}</td>
+                <td style="font-size: 0.7rem; color: #888;">{{ record.hash_value }}</td>
+                <td><a href="/report/{{ record.id }}">Download PDF</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
